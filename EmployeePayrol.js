@@ -11,7 +11,12 @@ class EmpPayrollData {
         this.startDate = params[4]; 
     }
     get name() { return this._name; }
-    set name(name) { this._name = name; }
+    set name(name) { 
+        let nRegex = RegExp("^[A-Z]{1}[a-z]{2,}$")
+        if(nRegex.test(name)){
+            this._name = name;
+        } else throw "Invalid Name"
+    }
 
     toString() {
         const options = {year: 'numeric', month: 'long', day:'numeric'};
@@ -23,7 +28,11 @@ class EmpPayrollData {
 }
 let empPayrollData = new EmpPayrollData(1, "Sami", 35000);
 console.log(empPayrollData.toString());
+try {
 empPayrollData.name = "john";
 console.log(empPayrollData.toString());
+} catch(e) {
+    console.error(e)
+}
 let newempPayrollData = new EmpPayrollData(1, "Mike", 35000,"F", new Date());
 console.log(newempPayrollData.toString());
