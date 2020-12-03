@@ -115,21 +115,3 @@ console.log("UC 11G is all Wages is Full Time: "+NumWrkingDays)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
